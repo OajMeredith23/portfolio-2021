@@ -1,5 +1,6 @@
 import * as React from "react"
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery, Link, Img } from 'gatsby';
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function WorkList() {
 
@@ -14,9 +15,13 @@ export default function WorkList() {
                        frontmatter {
                        description
                        title
-                       thumbnail {
+                       thumbnail{
                            publicURL
-                           }
+                       }
+                       
+                       }
+                       fields{
+                           slug
                        }
                    }
                }
@@ -26,14 +31,20 @@ export default function WorkList() {
    `
     )
 
-    const posts = data.allMarkdownRemark.edges
-    console.log({ data })
+    const posts = data.allMarkdownRemark.edges;
+
     return (
         <div>
             {posts.map(({ node }) => {
-                const { title } = node.frontmatter
+                const { title, fields, thumbnail } = node.frontmatter
+                const { slug } = node.fields
+
+                console.log(`../../..${thumbnail.publicURL}`)
                 return (
-                    <h1>{title}</h1>
+                    <Link to={slug} key={slug}>
+                        <h1>{title}</h1>
+                        <img src={`${thumbnail.publicURL}`} />
+                    </Link>
                 )
             })}
         </div>
