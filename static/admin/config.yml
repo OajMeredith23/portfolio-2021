@@ -10,17 +10,16 @@ collections:
     label: 'Work'
     folder: 'content/work'
     create: true
-    slug: 'index'
     media_folder: ''
     public_folder: ''
-    path: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
     fields:
       - label: "Order"
         name: "order"
         widget: "number"
-        default: 2
+        default: 0
         value_type: "int"
         min: 1
         max: 101
@@ -28,6 +27,10 @@ collections:
       - { label: 'Category', name: 'category', widget: 'hidden' , default: 'work'}
       - { label: 'Title', name: 'title', widget: 'string'}
       - { label: 'Publish Date', name: 'date', widget: 'datetime'}
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        required: false
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Brief', name: 'brief', widget: 'markdown', required: false}
       - { label: 'Solution', name: 'solution', widget: 'markdown', required: false}
