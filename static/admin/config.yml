@@ -10,7 +10,6 @@ collections:
     label: 'Work'
     folder: 'content/work'
     create: true
-    slug: 'index'
     media_folder: ''
     public_folder: ''
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
