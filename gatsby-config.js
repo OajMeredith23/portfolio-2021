@@ -7,7 +7,6 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -34,5 +33,6 @@ module.exports = {
       },
       __key: "work",
     },
+    "gatsby-transformer-remark",
   ],
 };
