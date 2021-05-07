@@ -1,17 +1,18 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Helmet } from 'gatsby-plugin-react-helmet'
+import { Helmet } from 'react-helmet'
 
 export default ({ data }) => {
 
   const post = data.markdownRemark
   const { title, description, thumbnail } = post.frontmatter
+  console.log({ title }, { description })
   const image = getImage(thumbnail)
 
   return (
     <div>
-      <Helmet defer={false}>
+      <Helmet title={title} defer={false}>
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
@@ -21,7 +22,7 @@ export default ({ data }) => {
       <p>{description}</p>
       <GatsbyImage image={image} alt={title} />
       <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-    </div>
+    </div >
   )
 }
 
