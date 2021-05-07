@@ -26,5 +26,13 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "work",
+        path: "./content/work/",
+      },
+      __key: "work",
+    },
   ],
 };
