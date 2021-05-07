@@ -7,6 +7,7 @@ export default ({ data }) => {
 
   const post = data.markdownRemark
   const { title, description, thumbnail } = post.frontmatter
+  console.log(thumbnail)
   console.log({ title }, { description })
   const image = getImage(thumbnail)
 
@@ -15,6 +16,10 @@ export default ({ data }) => {
       <Helmet title={title} defer={false}>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={thumbnail.publicURL} />
       </Helmet>
       <h1>
         {title}
@@ -41,6 +46,7 @@ export const query = graphql`
                 formats: [AUTO, WEBP, AVIF]
                 )
             }
+                publicURL
         }
       }
     }
