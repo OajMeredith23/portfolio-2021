@@ -17,12 +17,13 @@ collections:
     editor:
       preview: false
     fields:
+      - { label: "Order", name: "order", widget: "number", min: "0", max: "50"}
       - { label: 'Category', name: 'category', widget: 'hidden' , default: 'work'}
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Title', name: 'title', widget: 'string'}
+      - { label: 'Publish Date', name: 'date', widget: 'datetime'}
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Brief', name: 'brief', widget: 'markdown', required: false}
       - { label: 'Solution', name: 'solution', widget: 'markdown', required: false}
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image'}
       - { label: 'Video', name: 'video', widget: 'file', required: false}
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false}
