@@ -9,7 +9,6 @@ export default ({ data }) => {
 
   const post = data.markdownRemark
   const { title, description, thumbnail, video } = post.frontmatter
-  console.log({ video })
   const image = getImage(thumbnail)
 
   return (
