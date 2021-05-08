@@ -57,9 +57,11 @@ const Nav = ({ children, setDarkMode, darkMode }) => {
                             <li>
                                 About
                             </li>
-                            <li>
-                                Contact
+                            <a href="#contact">
+                                <li>
+                                    Contact
                             </li>
+                            </a>
                         </UL>
                     </>
                 }

@@ -27,9 +27,11 @@ const Nav = ({ children }) => {
                 <li>
                     About
                 </li>
-                <li>
-                    Contact
+                <a href="#contact">
+                    <li>
+                        Contact
                 </li>
+                </a>
             </ul>
             <hr />
             <div className="copyright">

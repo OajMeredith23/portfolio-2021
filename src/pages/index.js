@@ -18,9 +18,11 @@ const IndexPage = () => {
           <li>
             About
                         </li>
-          <li>
-            Contact
-                        </li>
+          <a href="#contact">
+            <li>
+              Contact
+              </li>
+          </a>
         </ul>
       </Landing>
       <WorkList />

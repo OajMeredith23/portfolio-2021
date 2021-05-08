@@ -21,7 +21,7 @@ const Container = styled.div`
 const Nav = ({ children }) => {
 
     return (
-        <Container>
+        <Container id="contact">
             <div>
                 <a href="mailto:mail@olivermeredith.com">
                     <h2>Say hi</h2>

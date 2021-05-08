@@ -9,6 +9,7 @@ export default ({ data }) => {
 
   const post = data.markdownRemark
   const { title, description, thumbnail, video } = post.frontmatter
+  console.log({ video })
   const image = getImage(thumbnail)
 
   return (
@@ -30,14 +31,14 @@ export default ({ data }) => {
         <div className="cover-image">
           <GatsbyImage image={image} alt={title} />
         </div>
-        {video &&
+        {video !== null &&
           <div className="video">
             <video width="320" height="240" controls>
               <source src={video.publicURL} type="video/mp4" />
             </video>
           </div>
         }
-        <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+        <Content dangerouslySetInnerHTML={{ __html: post.html }}></Content>
       </Container>
     </ >
   )
@@ -50,6 +51,29 @@ const Container = styled.div`
     picture, img {
       object-fit: contain;
     }
+  }
+
+  .video{
+    margin-top: 1em;
+    width: 100%;
+    video{
+      width: 100%;
+      height: 100%;
+    }
+  }
+`
+
+const Content = styled.div`
+  img {
+    width: 100%;
+  }
+
+  p {
+    margin: 1em auto;
+  }
+  h1,h2,h3,h4,h5{
+    margin-bottom: -.5em;
+    margin-top: 2em;
   }
 `
 export const query = graphql`

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.textColor};
         background-color: ${({ theme }) => theme.background};
         transition: .3s ease-out;
+        scroll-behavior: smooth;
     }
 
     h1, h2, h3, h4, h5{
@@ -59,6 +60,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         box-sizing: 0;
     }
+    
 `
 
 const theme = {
