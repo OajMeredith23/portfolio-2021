@@ -31,9 +31,9 @@ export const LinkIcons = ({ links, bgColor = false }) => {
                             url={link}
                         />
                         :
-                        <Link to={link}>
+                        <a href={link}>
                             <PrimaryBtn bgColor={bgColor}><LinkIcon /></PrimaryBtn>
-                        </Link>
+                        </a>
                 )
             })
             }

@@ -3,6 +3,26 @@ import styled from 'styled-components'
 import { useLocation } from "@reach/router"
 import { Link } from 'gatsby'
 import Landing from './Landing';
+
+const links = [
+    {
+        title: 'Work',
+        path: '/#work'
+    },
+    {
+        title: 'About',
+        path: '/about'
+    },
+    {
+        title: 'Contact',
+        path: '/#contact'
+    },
+]
+
+const LinkItem = styled.li`
+    text-decoration: ${({ isCurrent }) => isCurrent ? 'none' : 'underline'}
+`
+
 const Container = styled.div`
     nav{
         display: flex; 
@@ -10,28 +30,48 @@ const Container = styled.div`
         justify-content: space-between;
     }
     `
-// justify-content: space-between;
 
 const UL = styled.ul`
     display: flex;
-    // align-self: flex-end;
+    justify-content: center;
+    flex: 1;
     li {
         margin: 0 .5em;
     }
     margin-top: 1em;
-    // margin-left: auto;
 `
 
+export const NavLinks = () => {
+
+    const location = useLocation(); // NEW
+    return (
+        <UL>
+            {links.map(link => {
+                return (
+                    <Link to={link.path}>
+                        <LinkItem isCurrent={location.pathname === link.path}>
+                            {link.title}
+                        </LinkItem>
+                    </Link>
+                )
+            })}
+        </UL>
+    )
+}
+
+
+
 const DarkModeToggle = styled.div`
-    // margin-left: ${({ isHome }) => isHome ? 'auto' : '1em'};
-    margin-right: .5em;
+    width: 50px;
+    margin-left: ${({ isHome }) => isHome ? 'auto' : '0'};
+    display: flex;
+    justify-content: flex-end;
 `
 
 const Nav = ({ children, setDarkMode, darkMode }) => {
     const [isHome, setIsHome] = useState(true);
 
     const location = useLocation(); // NEW
-    console.log({ location })
     function checkIsHome() {
         const url = typeof window !== 'undefined' ? window.location.pathname === '/' : false;
         return url
@@ -39,54 +79,36 @@ const Nav = ({ children, setDarkMode, darkMode }) => {
 
     useEffect(() => {
         const u = checkIsHome()
-        console.log({ u }, u);
         setIsHome(u)
+        console.log(location)
     }, [location.pathname])
 
     return (
         <Container>
             <nav>
-                {!isHome &&
-                    <>
-                        <div
-                            style={{
-                                width: '50px',
-                                display: 'flex',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            <Link to="/">
-                                <h2>o.m.</h2>
-                            </Link>
-                        </div>
-                        <UL>
-                            <Link to="/#work">
-                                <li>
-                                    Work
-                            </li>
-                            </Link>
-                            <li>
-                                About
-                            </li>
-                            <a href="#contact">
-                                <li>
-                                    Contact
-                            </li>
-                            </a>
-                        </UL>
-                    </>
-                }
-                <div
-                    style={{
-                        width: '50px',
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }}
-                >
-                    <DarkModeToggle isHome={isHome} onClick={() => setDarkMode(!darkMode)}>
-                        {darkMode ? '🌙' : '☀️'}
-                    </DarkModeToggle>
-                </div>
+                {/* {!isHome && */}
+                <>
+                    <div
+                        style={{
+                            width: '50px',
+                            display: 'flex',
+                            justifyContent: 'center'
+                        }}
+                    >
+                        <Link to="/">
+                            <h2>o.m.</h2>
+                        </Link>
+                    </div>
+
+
+                    <NavLinks />
+
+                </>
+                {/* } */}
+
+                <DarkModeToggle isHome={isHome} onClick={() => setDarkMode(!darkMode)}>
+                    {darkMode ? '🌙' : '☀️'}
+                </DarkModeToggle>
             </nav>
 
 

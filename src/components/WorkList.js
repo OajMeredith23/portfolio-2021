@@ -79,6 +79,8 @@ export default function WorkList() {
     )
 }
 
+
+
 const LinksContainer = styled.div`
     margin: .5em 1em;
     display: flex; 
@@ -91,7 +93,7 @@ const LinksContainer = styled.div`
 `
 
 const Project = styled.div`
-    margin: 2em 0;
+    margin: 5em 0;
     .text{
         margin-bottom: .5em;
         max-width: 600px;

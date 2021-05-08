@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${({ theme }) => theme.background};
         transition: .3s ease-out;
         scroll-behavior: smooth;
+        scroll-padding: 3em 0;
     }
 
     h1, h2, h3, h4, h5{
@@ -35,7 +36,9 @@ const GlobalStyle = createGlobalStyle`
         font-style: italic;
     }
 
-    p a {
+    
+
+    p a, a li {
         text-decoration: underline;
     }
     a{

@@ -22,7 +22,8 @@ const Landing = ({ title, description, children, color = false, links = false })
             <a href="http://" target="_blank" rel="noopener noreferrer"></a>
             <p
                 style={{
-                    maxWidth: '600px'
+                    maxWidth: '600px',
+                    // padding: '0 1em'
                 }}
                 className="emphasis text-center"
                 dangerouslySetInnerHTML={{ __html: description }}
@@ -41,6 +42,7 @@ const LinksContainer = styled.div`
     display: flex; 
     width: 100%;
     justify-content: center;
+    align-items: center;
     margin: 1em 0;
     a:not(:last-of-type){
         margin-right: 1.5em;

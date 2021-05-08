@@ -1,5 +1,5 @@
 import React from "react"
-
+import { NavLinks } from './Nav'
 import styled from 'styled-components'
 const Container = styled.div`
     margin: 2em 0 1em 0;
@@ -20,19 +20,7 @@ const Nav = ({ children }) => {
 
     return (
         <Container>
-            <ul>
-                <li>
-                    Work
-                </li>
-                <li>
-                    About
-                </li>
-                <a href="#contact">
-                    <li>
-                        Contact
-                </li>
-                </a>
-            </ul>
+            <NavLinks />
             <hr />
             <div className="copyright">
                 <p>
