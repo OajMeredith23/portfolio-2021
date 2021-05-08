@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery, Link, Img } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image"
+import styled from 'styled-components';
 
 export default function WorkList() {
 
@@ -34,20 +35,55 @@ export default function WorkList() {
     const posts = data.allMarkdownRemark.edges;
 
     return (
-        <div>
-            {posts.map(({ node }) => {
-                const { title, fields, thumbnail } = node.frontmatter
+        <div id="work">
+            {posts.map(({ node }, i) => {
+                const { title, description, fields, thumbnail } = node.frontmatter
                 const { slug } = node.fields
 
-                console.log(`../../..${thumbnail.publicURL}`)
                 return (
                     <Link to={slug} key={slug}>
-                        <h1>{title}</h1>
-                        <img src={`${thumbnail.publicURL}`} />
+                        <Project>
+                            <div className="text">
+                                <h1>
+                                    <span>
+                                        {i + 1}.
+                                    </span>
+                                    {title}
+                                </h1>
+                                <p>{description}</p>
+                            </div>
+                            <div className="image">
+                                <img src={`${thumbnail.publicURL}`} />
+                            </div>
+                        </Project>
                     </Link>
                 )
             })}
         </div>
     )
 }
+
+
+const Project = styled.div`
+    margin: 2em 0;
+    .text{
+        margin-bottom: .5em;
+    }
+    .image{
+        width: 100%; 
+        padding-bottom: 56%;
+        position: relative;
+        overflow: hidden; 
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+`
 

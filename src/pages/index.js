@@ -3,9 +3,9 @@ import WorkList from '../components/WorkList'
 // markup
 const IndexPage = () => {
   return (
-    <main>
+    <>
       <WorkList />
-    </main>
+    </>
   )
 }
 

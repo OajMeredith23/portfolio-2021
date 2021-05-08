@@ -37,5 +37,21 @@ module.exports = {
       __key: "work",
     },
     "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `cormorant garamond\:300, 300i`,
+          `poppins\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout`),
+      },
+    },
   ],
 };
