@@ -10,8 +10,6 @@ collections:
     label: 'Work'
     folder: 'content/work'
     create: true
-    media_folder: ''
-    public_folder: ''
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
