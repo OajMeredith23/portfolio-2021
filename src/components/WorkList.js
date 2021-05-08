@@ -9,7 +9,14 @@ export default function WorkList() {
         graphql`
    
        query{
-           allMarkdownRemark(filter: {frontmatter: {category: {eq: "work"}}}) {
+           allMarkdownRemark(
+                sort: {fields: [frontmatter___order], order: ASC}
+               filter: {
+                   frontmatter: 
+                   {category: {eq: "work"}
+                   }
+                   }
+               ) {
                edges {
                    node {
                        id

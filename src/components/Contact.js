@@ -29,7 +29,7 @@ const Nav = ({ children }) => {
             </div>
             <div className="email">
                 <a href="mailto:mail@olivermeredith.com">
-                    <h2>mail@olivermeredith.com</h2>
+                    <h2 className="shrinks">mail@olivermeredith.com</h2>
                 </a>
             </div>
         </Container>

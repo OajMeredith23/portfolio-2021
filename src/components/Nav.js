@@ -69,7 +69,11 @@ const Nav = ({ children, setDarkMode, darkMode }) => {
             </nav>
             {isHome &&
                 <Landing title="Oliver Meredith" description="Front-end Developer | User-experience Designer">
-                    <ul className="horizontal-list">
+                    <ul className="horizontal-list"
+                        style={{
+                            marginTop: '1em'
+                        }}
+                    >
                         <li>
                             Work
                         </li>

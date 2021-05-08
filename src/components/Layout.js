@@ -24,6 +24,11 @@ const GlobalStyle = createGlobalStyle`
             color: #8f8e84;
         }
     }
+    h2 {
+        @media(max-width: 350px){
+            font-size: calc(2em - 45%);
+        }
+    }
 
     .italic{
         font-style: italic;
@@ -44,6 +49,9 @@ const GlobalStyle = createGlobalStyle`
         li {
             margin: 0 .5em;
         }
+    }
+    .shrinks{
+        
     }
 
     *{
