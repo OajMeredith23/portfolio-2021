@@ -38,6 +38,15 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     {
+      resolve: `gatsby-remark-images`,
+      options: {
+        // It's important to specify the maxWidth (in pixels) of
+        // the content container as this plugin uses this as the
+        // base for generating different widths of each image.
+        maxWidth: 1990,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
