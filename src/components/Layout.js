@@ -34,6 +34,10 @@ const GlobalStyle = createGlobalStyle`
     .italic{
         font-style: italic;
     }
+
+    p a {
+        text-decoration: underline;
+    }
     a{
         text-decoration: none; 
         color: inherit;

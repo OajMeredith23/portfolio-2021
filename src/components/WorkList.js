@@ -57,7 +57,7 @@ export default function WorkList() {
                                     </span>
                                     {title}
                                 </h1>
-                                <p>{description}</p>
+                                <p dangerouslySetInnerHTML={{ __html: description }}></p>
                             </div>
                             <div className="image">
                                 <img src={`${thumbnail.publicURL}`} />
@@ -75,6 +75,7 @@ const Project = styled.div`
     margin: 2em 0;
     .text{
         margin-bottom: .5em;
+        max-width: 600px;
     }
     .image{
         width: 100%; 
