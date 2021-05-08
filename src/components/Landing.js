@@ -23,7 +23,7 @@ const Landing = ({ title, description, children, color = false, links = false })
             <p
                 style={{
                     maxWidth: '600px',
-                    // padding: '0 1em'
+                    padding: '0 1em'
                 }}
                 className="emphasis text-center"
                 dangerouslySetInnerHTML={{ __html: description }}

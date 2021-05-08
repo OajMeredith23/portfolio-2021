@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { Helmet } from 'react-helmet';
 import Nav from './Nav';
 import Contact from './Contact'
 import Footer from './Footer'
@@ -92,7 +93,8 @@ const Container = styled.main`
     `
 // position: relative;
 
-
+const title = "Oliver Meredith | Front-end developer & user-experience designer"
+const description = "A front-end developer that builds upon a foundation in design. Creator of interesting, exciting digital experiences that build upon an education in UI/UX Design and 5 years experience using a variety of different web technologies."
 const Layout = ({ children }) => {
 
     const [darkMode, setDarkMode] = useState(false);
@@ -108,6 +110,13 @@ const Layout = ({ children }) => {
             <ThemeProvider
                 theme={darkMode ? theme.dark : theme.light}
             >
+                <Helmet title={title} defer={false}>
+                    <meta name="description" content={description} />
+                    <meta property="og:title" content={title} />
+                    <meta property="og:description" content={description} />
+                    <meta property="og:type" content="website" />
+                </Helmet>
+
                 <GlobalStyle />
                 <Container>
 
