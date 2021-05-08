@@ -10,13 +10,13 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: ${({ theme }) => theme.brandColor}; 
+    background: ${({ theme, color }) => color ? color : theme.brandColor}; 
     color: ${({ theme }) => theme.brandText};
 `
-const Landing = ({ title, description, children }) => {
+const Landing = ({ title, description, children, color = false }) => {
 
     return (
-        <Container>
+        <Container color={color}>
             <h1>{title}</h1>
             <a href="http://" target="_blank" rel="noopener noreferrer"></a>
             <p
