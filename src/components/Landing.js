@@ -18,7 +18,14 @@ const Landing = ({ title, description, children }) => {
     return (
         <Container>
             <h1>{title}</h1>
-            <p className="emphasis text-center">{description}</p>
+            <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+            <p
+                style={{
+                    maxWidth: '600px'
+                }}
+                className="emphasis text-center"
+                dangerouslySetInnerHTML={{ __html: description }}
+            ></p>
             {children}
         </Container>
     )
