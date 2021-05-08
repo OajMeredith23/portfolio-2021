@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components';
-
+import { SocialIcon } from 'react-social-icons'
+import { LinkIcons } from '../components/Elements/UiElements'
 
 const Container = styled.div`
     position: relative;
@@ -13,7 +14,7 @@ const Container = styled.div`
     background: ${({ theme, color }) => color ? color : theme.brandColor}; 
     color: ${({ theme }) => theme.brandText};
 `
-const Landing = ({ title, description, children, color = false }) => {
+const Landing = ({ title, description, children, color = false, links = false }) => {
 
     return (
         <Container color={color}>
@@ -26,9 +27,27 @@ const Landing = ({ title, description, children, color = false }) => {
                 className="emphasis text-center"
                 dangerouslySetInnerHTML={{ __html: description }}
             ></p>
+            {links &&
+                <LinksContainer>
+                    <LinkIcons links={links} bgColor={color} />
+                </LinksContainer>
+            }
             {children}
         </Container>
     )
 }
+
+const LinksContainer = styled.div`
+    display: flex; 
+    width: 100%;
+    justify-content: center;
+    margin: 1em 0;
+    a:not(:last-of-type){
+        margin-right: 1.5em;
+    }
+   a g.social-svg-mask path{
+        fill: ${({ theme }) => theme.background};
+    }
+`
 
 export default Landing

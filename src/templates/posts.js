@@ -8,8 +8,8 @@ import Video from '../components/Elements/Video'
 export default ({ data }) => {
 
   const post = data.markdownRemark
-  const { title, description, thumbnail, videoSrcURL } = post.frontmatter
-  console.log({ videoSrcURL })
+  const { title, description, thumbnail, videoSrcURL, color, links } = post.frontmatter
+  console.log({ color })
   const image = getImage(thumbnail)
 
   return (
@@ -26,7 +26,10 @@ export default ({ data }) => {
       <Landing
         title={title}
         description={description}
+        links={links}
+        color={color}
       ></Landing>
+
       <Container>
         <div className="cover-image">
           <GatsbyImage image={image} alt={title} />
@@ -88,6 +91,8 @@ export const query = graphql`
       frontmatter {
         title
         description
+        color
+        links
         thumbnail{
             childImageSharp {
                 gatsbyImageData(

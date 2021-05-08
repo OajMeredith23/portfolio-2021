@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.4.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -33,6 +34,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-share": "^4.4.0",
+    "react-social-icons": "^5.2.0",
     "styled-components": "^5.3.0"
   }
 }

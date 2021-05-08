@@ -1,8 +1,9 @@
 import * as React from "react"
 import { graphql, useStaticQuery, Link, Img } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image"
+import { SocialIcon } from 'react-social-icons'
 import styled from 'styled-components';
-
+import { PrimaryBtn, LinkIcons } from '../components/Elements/UiElements'
 export default function WorkList() {
 
     const data = useStaticQuery(
@@ -21,6 +22,7 @@ export default function WorkList() {
                    node {
                        id
                        frontmatter {
+                       links
                        description
                        title
                        thumbnail{
@@ -44,38 +46,60 @@ export default function WorkList() {
     return (
         <div id="work">
             {posts.map(({ node }, i) => {
-                const { title, description, fields, thumbnail } = node.frontmatter
+                const { title, description, fields, thumbnail, links } = node.frontmatter
                 const { slug } = node.fields
 
                 return (
-                    <Link to={slug} key={slug}>
-                        <Project>
-                            <div className="text">
+                    <Project>
+                        <div className="text">
+                            <div className="title">
                                 <h1>
                                     <span>
                                         {i + 1}.
                                     </span>
                                     {title}
                                 </h1>
-                                <p dangerouslySetInnerHTML={{ __html: description }}></p>
+                                {links &&
+                                    <LinksContainer>
+                                        <LinkIcons links={links} />
+                                    </LinksContainer>
+                                }
                             </div>
+                            <p dangerouslySetInnerHTML={{ __html: description }}></p>
+                        </div>
+                        <Link to={slug} key={slug}>
                             <div className="image">
                                 <img src={`${thumbnail.publicURL}`} />
                             </div>
-                        </Project>
-                    </Link>
+                        </Link>
+                    </Project>
                 )
             })}
         </div>
     )
 }
 
+const LinksContainer = styled.div`
+    margin: .5em 1em;
+    display: flex; 
+    a:not(:last-of-type){
+        margin-right: 1em;
+    }
+   a g.social-svg-mask path{
+        fill: ${({ theme }) => theme.textColor};
+    }
+`
 
 const Project = styled.div`
     margin: 2em 0;
     .text{
         margin-bottom: .5em;
         max-width: 600px;
+        .title{
+            display: flex;
+            flex-wrap: wrap; 
+            align-items: center;
+        }
     }
     .image{
         width: 100%; 
