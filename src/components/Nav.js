@@ -27,8 +27,8 @@ const DarkModeToggle = styled.div`
 `
 
 const Nav = ({ children, setDarkMode, darkMode }) => {
-    const [isHome, setIsHome] = useState(false);
-    const [isInView, setIsInView] = useState(true);
+    const [isHome, setIsHome] = useState(true);
+
     const location = useLocation(); // NEW
     console.log({ location })
     function checkIsHome() {
@@ -67,25 +67,8 @@ const Nav = ({ children, setDarkMode, darkMode }) => {
                     {darkMode ? '🌙' : '☀️'}
                 </DarkModeToggle>
             </nav>
-            {isHome &&
-                <Landing title="Oliver Meredith" description="Front-end Developer | User-experience Designer">
-                    <ul className="horizontal-list"
-                        style={{
-                            marginTop: '1em'
-                        }}
-                    >
-                        <li>
-                            Work
-                        </li>
-                        <li>
-                            About
-                        </li>
-                        <li>
-                            Contact
-                        </li>
-                    </ul>
-                </Landing>
-            }
+
+
         </Container>
     )
 }
