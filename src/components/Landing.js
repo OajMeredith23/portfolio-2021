@@ -29,9 +29,7 @@ const Landing = ({ title, description, children, color = false, links = false })
                 dangerouslySetInnerHTML={{ __html: description }}
             ></p>
             {links &&
-                <LinksContainer>
-                    <LinkIcons links={links} bgColor={color} />
-                </LinksContainer>
+                <LinkIcons links={links} bgColor={color} isLanding={true} />
             }
             {children}
         </Container>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { SocialIcon } from 'react-social-icons'
 import profilePhoto from '../../static/media/profile.jpg'
 import { StaticImage } from "gatsby-plugin-image"
-
+import { LinkIcons } from '../components/Elements/UiElements'
 const Container = styled.div`
     display: flex;
     padding-top: 2em; 
@@ -12,9 +12,7 @@ const Container = styled.div`
     align-items: center;
 
     .image{
-        img {
-            width: calc(100% - 1em);
-        }
+        padding-right: 1em;
     }
     .image, .text{
         flex: 1 1 400px;
@@ -24,9 +22,6 @@ const Container = styled.div`
         .title{
             display: flex; 
             align-items: center;
-            a {
-                margin-left: 1em;
-            }
         }
     }
 `
@@ -40,7 +35,7 @@ const About = () => {
             <div className="text">
                 <div className="title">
                     <h1>About</h1>
-                    <SocialIcon url="https://github.com/OajMeredith23" />
+                    <LinkIcons links={['https://github.com/OajMeredith23']} />
                 </div>
                 <p style={{
                     margin: '.5em 0'
