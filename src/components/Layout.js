@@ -26,8 +26,8 @@ const GlobalStyle = createGlobalStyle`
         }
     }
     h2 {
-        @media(max-width: 350px){
-            font-size: calc(2em - 65%);
+        @media(max-width: 400px){
+            font-size: calc(2em - 45%);
         }
     }
 

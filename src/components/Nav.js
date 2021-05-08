@@ -7,22 +7,23 @@ const Container = styled.div`
     nav{
         display: flex; 
         align-items: flex-end;
+        justify-content: space-between;
     }
     `
 // justify-content: space-between;
 
 const UL = styled.ul`
     display: flex;
-    align-self: flex-end;
+    // align-self: flex-end;
     li {
         margin: 0 .5em;
     }
     margin-top: 1em;
-    margin-left: auto;
+    // margin-left: auto;
 `
 
 const DarkModeToggle = styled.div`
-    margin-left: ${({ isHome }) => isHome ? 'auto' : '1em'};
+    // margin-left: ${({ isHome }) => isHome ? 'auto' : '1em'};
     margin-right: .5em;
 `
 
@@ -47,9 +48,17 @@ const Nav = ({ children, setDarkMode, darkMode }) => {
             <nav>
                 {!isHome &&
                     <>
-                        <Link to="/">
-                            <h2>Oliver Meredith</h2>
-                        </Link>
+                        <div
+                            style={{
+                                width: '50px',
+                                display: 'flex',
+                                justifyContent: 'center'
+                            }}
+                        >
+                            <Link to="/">
+                                <h2>o.m.</h2>
+                            </Link>
+                        </div>
                         <UL>
                             <Link to="/#work">
                                 <li>
@@ -67,13 +76,21 @@ const Nav = ({ children, setDarkMode, darkMode }) => {
                         </UL>
                     </>
                 }
-                <DarkModeToggle isHome={isHome} onClick={() => setDarkMode(!darkMode)}>
-                    {darkMode ? '🌙' : '☀️'}
-                </DarkModeToggle>
+                <div
+                    style={{
+                        width: '50px',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <DarkModeToggle isHome={isHome} onClick={() => setDarkMode(!darkMode)}>
+                        {darkMode ? '🌙' : '☀️'}
+                    </DarkModeToggle>
+                </div>
             </nav>
 
 
-        </Container>
+        </Container >
     )
 }
 
