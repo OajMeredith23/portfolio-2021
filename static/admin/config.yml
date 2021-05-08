@@ -29,7 +29,7 @@ collections:
       - { label: 'Category', name: 'category', widget: 'hidden' , default: 'work'}
       - { label: 'Title', name: 'title', widget: 'string'}
       - { label: 'Publish Date', name: 'date', widget: 'datetime'}
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image'}
       - { label: 'videoSrcURL', name: 'videoSrcURL', widget: 'string', hint: 'The embed link, not the default share link', required: false}
       - { label: 'Color', name: 'color', widget: 'color' }
