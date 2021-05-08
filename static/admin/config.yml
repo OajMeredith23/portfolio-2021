@@ -33,5 +33,5 @@ collections:
       - { label: 'Brief', name: 'brief', widget: 'markdown', required: false}
       - { label: 'Solution', name: 'solution', widget: 'markdown', required: false}
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image'}
-      - { label: 'Video', name: 'video', widget: 'file', required: false}
+      - { label: 'videoSrcURL', name: 'videoSrcURL', widget: 'string', required: false}
       - { label: 'Body', name: 'body', widget: 'markdown', required: false}

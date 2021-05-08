@@ -4,12 +4,12 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components';
 import Landing from '../components/Landing'
-
+import Video from '../components/Elements/Video'
 export default ({ data }) => {
 
   const post = data.markdownRemark
-  const { title, description, thumbnail, video } = post.frontmatter
-  console.log({ video })
+  const { title, description, thumbnail, videoSrcURL } = post.frontmatter
+  console.log({ videoSrcURL })
   const image = getImage(thumbnail)
 
   return (
@@ -31,11 +31,12 @@ export default ({ data }) => {
         <div className="cover-image">
           <GatsbyImage image={image} alt={title} />
         </div>
-        {video !== null &&
+        {videoSrcURL !== null &&
           <div className="video">
-            <video width="320" height="240" controls>
-              <source src={video.publicURL} type="video/mp4" />
-            </video>
+            <Video
+              title={title}
+              videoSrcURL={videoSrcURL}
+            />
           </div>
         }
         <Content dangerouslySetInnerHTML={{ __html: post.html }}></Content>
@@ -55,8 +56,12 @@ const Container = styled.div`
 
   .video{
     margin-top: 1em;
-    width: 100%;
-    video{
+    padding-bottom: 56.25%;
+    position: relative;
+    iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
     }
@@ -92,9 +97,7 @@ export const query = graphql`
             }
                 publicURL
         }
-        video{
-          publicURL
-        }
+        videoSrcURL
       }
     }
   }

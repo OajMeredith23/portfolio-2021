@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from 'gatsby'
 import WorkList from '../components/WorkList'
 import Landing from '../components/Landing'
 // markup
@@ -12,9 +13,11 @@ const IndexPage = () => {
             marginTop: '1em'
           }}
         >
-          <li>
-            Work
-                        </li>
+          <Link to="/#work">
+            <li>
+              Work
+            </li>
+          </Link>
           <li>
             About
                         </li>
