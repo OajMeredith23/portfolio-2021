@@ -12,7 +12,9 @@ const Container = styled.div`
     align-items: center;
 
     .image{
-        padding-right: 1em;
+        @media(min-width: 400px){
+            padding-right: 1em;
+        }
     }
     .image, .text{
         flex: 1 1 400px;
