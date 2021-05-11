@@ -3,9 +3,9 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
-exports.onCreateNode = ({ node }) => {
-  fmImagesToRelative(node);
-};
+// exports.onCreateNode = ({ node }) => {
+//   fmImagesToRelative(node);
+// };
 
 exports.onCreateNode = ({ node }) => {
   console.log(`Node created of type "${node.internal.type}"`)

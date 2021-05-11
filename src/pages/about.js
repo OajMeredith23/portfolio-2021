@@ -32,7 +32,7 @@ const About = () => {
     return (
         <Container>
             <div className="image">
-                <StaticImage src="../../static/media/profile.jpg" alt="" />
+                <img src="../../static/media/profile.jpg" alt="" />
             </div>
             <div className="text">
                 <div className="title">

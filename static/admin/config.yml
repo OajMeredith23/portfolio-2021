@@ -3,8 +3,10 @@ backend:
   branch: main
 
 publish_mode: editorial_workflow
-media_folder: static/imgs
-public_folder: /imgs
+
+media_folder: static/media
+public_folder: /media
+
 display_url: https://olivermeredith-2.netlify.app
 
 collections:
