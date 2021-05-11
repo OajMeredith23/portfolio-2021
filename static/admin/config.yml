@@ -10,8 +10,8 @@ display_url: https://olivermeredith-2.netlify.app
 collections:
   - name: 'work'
     label: 'Work'
-    media_folder: ''
-    public_folder: ''
+    media_folder: 'content/work/media'
+    public_folder: 'content/work/media'
     folder: 'content/work'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"

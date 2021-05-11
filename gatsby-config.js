@@ -37,6 +37,14 @@ module.exports = {
       __key: "work",
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "media",
+        path: "./static/media/",
+      },
+      __key: "media",
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: ["gatsby-remark-component"]

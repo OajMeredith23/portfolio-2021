@@ -15,7 +15,26 @@ export const PrimaryBtn = styled.button`
     background: ${({ theme, bgColor }) => bgColor ? theme.brandText : theme.textColor}; 
     color: ${({ theme, bgColor }) => bgColor ? bgColor : theme.background}; 
     border-radius: 1000px;
-    curosr: pointer
+    cursor: pointer;
+`
+
+export const Title = styled.h1`
+    position: relative;
+    z-index: 1;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: .1em;
+        left: 1em;
+        right: 0;
+        height: 0.15em;
+        z-index: -1;
+        background: ${({ theme, color }) => color ? color : theme.brandColor};
+        transition: .1s ease-in-out;
+    }
+    &:hover:before{
+        left: 0;
+    }
 `
 
 const LinksContainer = styled.div`

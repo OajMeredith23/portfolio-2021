@@ -18,13 +18,14 @@ export default ({ data }) => {
     color,
     links
   } = post.frontmatter
+  console.log({ thumbnail })
 
   const image = getImage(thumbnail)
 
   return (
     <>
       <Helmet title={title} defer={false}>
-        <title>{title}</title>
+        <title>Oliver Meredith | {title}</title>
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={title} />
@@ -44,17 +45,21 @@ export default ({ data }) => {
           <GatsbyImage image={image} alt={title} />
         </div>
 
-        {brief &&
-          <div className="text-section brief">
-            <h1>Brief</h1>
-            <div dangerouslySetInnerHTML={{ __html: brief }}></div>
-          </div>
-        }
-        {solution &&
-          <div className="text-section solution">
-            <h1>Solution</h1>
-            <div dangerouslySetInnerHTML={{ __html: solution }}></div>
-          </div>
+        {(brief || solution) &&
+          <figure className="brief-and-solution">
+            {brief &&
+              <div className="text-section brief">
+                <h1>Brief</h1>
+                <p dangerouslySetInnerHTML={{ __html: brief }}></p>
+              </div>
+            }
+            {solution &&
+              <div className="text-section solution">
+                <h1>Solution</h1>
+                <p dangerouslySetInnerHTML={{ __html: solution }}></p>
+              </div>
+            }
+          </figure>
         }
         {videoSrcURL !== null &&
           <div className="video">
@@ -78,10 +83,22 @@ const Container = styled.div`
       object-fit: contain;
     }
   }
+  .brief-and-solution{
+    display: flex; 
+    flex-wrap: wrap;
+    .text-section{
+      flex: 1 1 450px;
+    }
+  }
 
   .text-section{
-    margin: 1em 1em 2em 1em;
+    margin: 1em;
     max-width: 65ch;
+    @media(min-width: 600px){
+      p {
+        font-size: 140%;
+      }
+    }
   }
   .video{
     margin-top: 1em;
@@ -105,7 +122,6 @@ const Content = styled.div`
     margin: 1em auto;
   }
   h1,h2,h3,h4,h5{
-    margin-bottom: -.5em;
     margin-top: 2em;
   }
 `

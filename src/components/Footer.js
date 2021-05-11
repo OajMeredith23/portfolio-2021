@@ -21,7 +21,7 @@ const Nav = ({ children }) => {
     return (
         <Container>
             <NavLinks />
-            <hr />
+            <hr style={{ margin: '1em 0' }} />
             <div className="copyright">
                 <p>
                     copyright &copy;{new Date().getFullYear()} Oliver Meredith

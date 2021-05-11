@@ -28,6 +28,9 @@ const Container = styled.div`
         display: flex; 
         align-items: flex-end;
         justify-content: space-between;
+        h2 {
+        }
+        color: ${({ theme }) => theme.brandColor};
     }
     `
 

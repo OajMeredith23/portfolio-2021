@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     
+    
 
     p a, a li {
         text-decoration: underline;
@@ -73,13 +74,14 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
     dark: {
-        brandColor: `#15395e`,
+
+        brandColor: `#5a8bb0`,
         brandText: `#fafaf7`,
         background: `#1a1919`,
         textColor: `#fafaf7`
     },
     light: {
-        brandColor: `#15395e`,
+        brandColor: `#5a8bb0`,
         brandText: `#fafaf7`,
         background: `#fafaf7`,
         textColor: `#1a1919`
