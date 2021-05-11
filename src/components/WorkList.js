@@ -92,9 +92,9 @@ const Project = styled.div`
             display: flex;
             flex-wrap: wrap; 
             align-items: center;
-            h1 span{
-                color: ${({ theme }) => theme.brandColor}
-            }
+            // h1 span{
+            //     color: ${({ theme }) => theme.brandColor}
+            // }
         }
     }
     .image{

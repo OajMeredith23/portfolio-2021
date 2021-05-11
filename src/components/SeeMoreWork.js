@@ -39,7 +39,7 @@ export default function SeeMoreWork({ currTitle }) {
 
     return (
         <Container>
-            <h4>See more work</h4>
+            <h4>More work</h4>
             {posts.filter(({ node }) => node.frontmatter.title !== currTitle).map(({ node }) => {
                 const { title, color } = node.frontmatter;
                 return (
@@ -61,7 +61,7 @@ const Container = styled.div`
 `
 
 const Item = styled.div`
-h1 {
-    color: ${({ theme, color }) => color || theme.brandColor}
-}
+    h1 {
+        color: ${({ theme, color }) => color || theme.brandColor}
+    }
 `

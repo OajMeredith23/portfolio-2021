@@ -32,6 +32,9 @@ export const Title = styled.h1`
         background: ${({ theme, color }) => color ? color : theme.brandColor};
         transition: .1s ease-in-out;
     }
+    span{
+        color: ${({ color, theme }) => color || theme};
+    }
     &:hover:before{
         left: 0;
     }
