@@ -47,13 +47,13 @@ export default ({ data }) => {
         {brief &&
           <div className="text-section brief">
             <h1>Brief</h1>
-            <p dangerouslySetInnerHTML={{ __html: brief }}></p>
+            <div dangerouslySetInnerHTML={{ __html: brief }}></div>
           </div>
         }
         {solution &&
           <div className="text-section solution">
             <h1>Solution</h1>
-            <p dangerouslySetInnerHTML={{ __html: solution }}></p>
+            <div dangerouslySetInnerHTML={{ __html: solution }}></div>
           </div>
         }
         {videoSrcURL !== null &&

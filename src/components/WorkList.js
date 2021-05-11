@@ -66,7 +66,7 @@ export default function WorkList() {
                         </div>
                         <Link to={slug} key={slug}>
                             <div className="image">
-                                {/* <img src={`${thumbnail.publicURL}`} /> */}
+                                <img src={`${thumbnail.publicURL}`} />
                             </div>
                         </Link>
                     </Project>
