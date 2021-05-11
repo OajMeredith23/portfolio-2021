@@ -50,7 +50,7 @@ export default function WorkList() {
             {posts.map(({ node }, i) => {
                 const { title, description, fields, thumbnail, links, color } = node.frontmatter
                 const { slug } = node.fields
-
+                console.log(title, thumbnail)
                 return (
                     <Project>
                         <div className="text">

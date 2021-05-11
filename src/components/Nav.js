@@ -51,7 +51,7 @@ export const NavLinks = () => {
         <UL>
             {links.map(link => {
                 return (
-                    <Link to={link.path}>
+                    <Link to={link.path} key={link.path}>
                         <LinkItem isCurrent={location.pathname === link.path}>
                             {link.title}
                         </LinkItem>

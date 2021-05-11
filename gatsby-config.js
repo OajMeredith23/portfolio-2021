@@ -16,7 +16,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: "./src/pages",
       },
       __key: "pages",
     },
@@ -24,7 +24,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "work",
-        path: "./content/work/",
+        path: "./content/work",
       },
       __key: "work",
     },
