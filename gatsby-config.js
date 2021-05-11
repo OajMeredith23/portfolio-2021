@@ -39,14 +39,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "posts",
-        path: "./src/content/work/",
-      },
-      __key: "posts",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "media",
         path: "./static/media/",
       },
@@ -75,7 +67,7 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 590,
+              maxWidth: 1920,
             },
           },
         ],
