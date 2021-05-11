@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import { SocialIcon } from 'react-social-icons'
-import profilePhoto from '../../static/media/profile.jpg'
 import { StaticImage } from "gatsby-plugin-image"
 import { LinkIcons } from '../components/Elements/UiElements'
 const Container = styled.div`
@@ -32,7 +31,7 @@ const About = () => {
     return (
         <Container>
             <div className="image">
-                <StaticImage src="../../static/media/profile.jpg" alt="" />
+                <StaticImage src="../../content/profile.jpg" alt="" />
             </div>
             <div className="text">
                 <div className="title">

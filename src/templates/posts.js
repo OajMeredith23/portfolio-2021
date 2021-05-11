@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components';
+import SeeMoreWork from '../components/SeeMoreWork'
 import Landing from '../components/Landing'
 import Video from '../components/Elements/Video'
 export default ({ data }) => {
@@ -70,6 +71,7 @@ export default ({ data }) => {
           </div>
         }
         <Content dangerouslySetInnerHTML={{ __html: post.html }}></Content>
+        <SeeMoreWork currTitle={title} />
       </Container>
     </ >
   )

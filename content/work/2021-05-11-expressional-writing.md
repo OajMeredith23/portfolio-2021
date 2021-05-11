@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 7
 links:
   - https://expressionalwriting.netlify.app
   - https://github.com/OajMeredith23/expressional-writing
@@ -11,9 +11,8 @@ description: >-
   an experiment in interaction, using the face as an input device. 
 
 
-  </br>Using **Face-api.js,** this program recognises the expression being made by the user in front of their computer and uses the detected expression, their estimated age, and gender to write out a story unique.
+  </br>Using <b>Face-api.js,</b> this program recognises the expression being made by the user in front of their computer and uses the detected expression, their estimated age, and gender to write out a story unique.
 thumbnail: screenshot-2021-05-11-at-20.49.10.png
 videoSrcURL: https://www.youtube.com/embed/s-F2mizSR6E
 color: "#040404"
 ---
-![](sketch-32-.png)

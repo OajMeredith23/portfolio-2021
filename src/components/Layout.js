@@ -75,13 +75,15 @@ const theme = {
 
         brandColor: `#5a8bb0`,
         brandText: `#fafaf7`,
-        background: `#1a1919`,
+        background: `#404040`,
+        middleground: `#595959`,
         textColor: `#fafaf7`
     },
     light: {
         brandColor: `#5a8bb0`,
         brandText: `#fafaf7`,
         background: `#fafaf7`,
+        middleground: `whitesmoke`,
         textColor: `#1a1919`
     }
 }
