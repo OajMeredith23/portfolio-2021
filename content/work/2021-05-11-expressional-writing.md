@@ -16,3 +16,4 @@ thumbnail: screenshot-2021-05-11-at-20.49.10.png
 videoSrcURL: https://www.youtube.com/embed/s-F2mizSR6E
 color: "#040404"
 ---
+![](sketch-32-.png)
