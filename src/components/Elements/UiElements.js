@@ -58,10 +58,11 @@ export const LinkIcons = ({ links, bgColor = false, isLanding = true }) => {
                 return (
                     linkIsSocial(link) ?
                         <SocialIcon
+                            key={link}
                             url={link}
                         />
                         :
-                        <a href={link}>
+                        <a href={link} key={link}>
                             <PrimaryBtn bgColor={bgColor}><LinkIcon /></PrimaryBtn>
                         </a>
                 )
