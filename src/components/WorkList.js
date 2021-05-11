@@ -49,7 +49,6 @@ export default function WorkList() {
         <div id="work">
             {posts.map(({ node }, i) => {
                 const { title, description, fields, thumbnail, links, color } = node.frontmatter
-                console.log("thumbnail", thumbnail)
                 const { slug } = node.fields
 
                 return (

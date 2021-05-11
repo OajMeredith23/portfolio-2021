@@ -86,6 +86,7 @@ const Container = styled.div`
   .brief-and-solution{
     display: flex; 
     flex-wrap: wrap;
+    margin: 2em 0 4em 0;
     .text-section{
       flex: 1 1 450px;
     }
@@ -115,14 +116,21 @@ const Container = styled.div`
 `
 const Content = styled.div`
   img {
-    width: 100%;
+    display: inline-block;
+    width: calc(100% + 2em);
+    margin: 1em -1em;
   }
 
   p {
-    margin: 1em auto;
+    margin: 1em -1em;
   }
-  h1,h2,h3,h4,h5{
-    margin-top: 2em;
+  padding: 0 1em;
+  h1,h2{
+    margin-top: 1em;
+  }
+
+  ul, ol {
+    max-width: 65ch;
   }
 `
 export const query = graphql`

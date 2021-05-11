@@ -37,8 +37,6 @@ const GlobalStyle = createGlobalStyle`
         font-style: italic;
     }
 
-    
-    
 
     p a, a li {
         text-decoration: underline;
