@@ -27,6 +27,8 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
+  fmImagesToRelative(node);
+
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })

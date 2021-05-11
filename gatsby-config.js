@@ -15,14 +15,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "pages",
         path: "./src/pages/",
       },
@@ -37,20 +29,11 @@ module.exports = {
       __key: "work",
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "media",
-        path: "./static/media/",
+        name: `assets`,
+        path: `${__dirname}/static`,
       },
-      __key: "media",
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          { resolve: `gatsby-remark-relative-images-v2` },
-        ]
-      }
     },
     {
       resolve: `gatsby-transformer-remark`,
