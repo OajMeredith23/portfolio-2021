@@ -36,7 +36,12 @@ module.exports = {
       },
       __key: "work",
     },
-    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: ["gatsby-remark-component"]
+      }
+    },
     {
       resolve: `gatsby-remark-images`,
       options: {

@@ -10,9 +10,9 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => {
             title={videoTitle}
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-            allowfullscreen
+            webKitAllowFullScreen="true"
+            mozAllowFullScreen="true"
+            allowFullScreen
         ></iframe>
     )
 }

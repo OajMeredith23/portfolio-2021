@@ -47,6 +47,7 @@ export default function WorkList() {
         <div id="work">
             {posts.map(({ node }, i) => {
                 const { title, description, fields, thumbnail, links } = node.frontmatter
+                console.log("thumbnail", thumbnail)
                 const { slug } = node.fields
 
                 return (
@@ -65,7 +66,7 @@ export default function WorkList() {
                         </div>
                         <Link to={slug} key={slug}>
                             <div className="image">
-                                <img src={`${thumbnail.publicURL}`} />
+                                {/* <img src={`${thumbnail.publicURL}`} /> */}
                             </div>
                         </Link>
                     </Project>

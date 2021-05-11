@@ -8,8 +8,17 @@ import Video from '../components/Elements/Video'
 export default ({ data }) => {
 
   const post = data.markdownRemark
-  const { title, description, thumbnail, videoSrcURL, color, links } = post.frontmatter
-  console.log({ color })
+  const {
+    title,
+    description,
+    brief,
+    solution,
+    thumbnail,
+    videoSrcURL,
+    color,
+    links
+  } = post.frontmatter
+
   const image = getImage(thumbnail)
 
   return (
@@ -20,7 +29,7 @@ export default ({ data }) => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={title} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={thumbnail.publicURL} />
+        {/* <meta property="og:image" content={thumbnail.publicURL} /> */}
       </Helmet>
 
       <Landing
@@ -34,6 +43,19 @@ export default ({ data }) => {
         <div className="cover-image">
           <GatsbyImage image={image} alt={title} />
         </div>
+
+        {brief &&
+          <div className="text-section brief">
+            <h1>Brief</h1>
+            <p dangerouslySetInnerHTML={{ __html: brief }}></p>
+          </div>
+        }
+        {solution &&
+          <div className="text-section solution">
+            <h1>Solution</h1>
+            <p dangerouslySetInnerHTML={{ __html: solution }}></p>
+          </div>
+        }
         {videoSrcURL !== null &&
           <div className="video">
             <Video
@@ -57,6 +79,10 @@ const Container = styled.div`
     }
   }
 
+  .text-section{
+    margin: 1em 1em 2em 1em;
+    max-width: 65ch;
+  }
   .video{
     margin-top: 1em;
     padding-bottom: 56.25%;
@@ -70,7 +96,6 @@ const Container = styled.div`
     }
   }
 `
-
 const Content = styled.div`
   img {
     width: 100%;
@@ -93,6 +118,8 @@ export const query = graphql`
         description
         color
         links
+        brief
+        solution
         thumbnail{
             childImageSharp {
                 gatsbyImageData(
