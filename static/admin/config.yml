@@ -4,13 +4,15 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: ''
-public_folder: ''
+media_folder: '/static/media'
+public_folder: '/media'
 
 display_url: https://olivermeredith-2.netlify.app
 
 collections:
   - name: 'work'
+    media_folder: ''
+    public_folder: ''
     label: 'Work'
     folder: 'content/work'
     create: true

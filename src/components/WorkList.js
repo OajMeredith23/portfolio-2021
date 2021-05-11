@@ -52,7 +52,7 @@ export default function WorkList() {
                 const { slug } = node.fields
                 console.log(title, thumbnail)
                 return (
-                    <Project>
+                    <Project key={node.id}>
                         <div className="text">
                             <div className="title">
                                 <Link to={slug}>
