@@ -12,7 +12,7 @@ display_url: https://olivermeredith-2.netlify.app
 collections:
   - name: 'work'
     label: 'Work'
-    folder: 'src/content/work'
+    folder: 'content/work'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
