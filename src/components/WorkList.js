@@ -79,8 +79,8 @@ export default function WorkList() {
 const Project = styled.div`
     margin: 5em 0;
     .text{
-        margin-bottom: .5em;
-        max-width: 600px;
+        margin: 1em 0;
+        max-width: 650px;
         padding-right: 2em;
         .title{
             display: flex;

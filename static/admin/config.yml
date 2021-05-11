@@ -34,7 +34,7 @@ collections:
       - { label: 'Description', name: 'description', widget: 'markdown' }
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image'}
       - { label: 'videoSrcURL', name: 'videoSrcURL', widget: 'string', hint: 'The embed link, not the default share link', required: false}
-      - { label: 'Color', name: 'color', widget: 'color' required:false}
+      - { label: 'Color', name: 'color', widget: 'color', required:false}
       - { label: 'Brief', name: 'brief', widget: 'markdown', required: false}
       - { label: 'Solution', name: 'solution', widget: 'markdown', required: false}
       - { label: 'Body', name: 'body', widget: 'markdown', required: false}
