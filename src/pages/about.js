@@ -32,7 +32,7 @@ const About = () => {
     return (
         <Container>
             <div className="image">
-                <img src="../../static/media/profile.jpg" alt="" />
+                <StaticImage src="../../static/media/profile.jpg" alt="" />
             </div>
             <div className="text">
                 <div className="title">
@@ -49,7 +49,7 @@ const About = () => {
                 <p style={{
                     maxWidth: '45ch'
                 }}>
-                    A front-end developer that builds upon a foundation in design. Creator of interesting, exciting digital experiences that build upon an education in UI/UX Design and 5 years experience using a variety of different web technologies.
+                    A front-end developer that builds upon a foundation in design. Creator of interesting, exciting digital experiences using an education in UI/UX Design and 5 years experience using a variety of different web technologies.
                 </p>
             </div>
         </Container>
