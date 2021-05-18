@@ -3,7 +3,7 @@ module.exports = {
     THE_FLAG: false
   },
   siteMetadata: {
-    title: "portfolio-3",
+    title: "Oliver Meredith",
   },
   plugins: [
     "gatsby-plugin-netlify-cms",

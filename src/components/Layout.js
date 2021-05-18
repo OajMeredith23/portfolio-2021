@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react"
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { Helmet } from 'react-helmet';
+import favicon from '../images/icon.png'
 import Nav from './Nav';
 import Contact from './Contact'
 import Footer from './Footer'
 
 const GlobalStyle = createGlobalStyle`
     body, html {
-        font-family: 'poppins', sans-serif;
+        font-family: 'poppins', sans-sersif;
         font-size: 100%;
         color: ${({ theme }) => theme.textColor};
         background-color: ${({ theme }) => theme.background};
@@ -117,6 +118,7 @@ const Layout = ({ children }) => {
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={description} />
                     <meta property="og:type" content="website" />
+                    <link rel="icon" href={favicon} />
                 </Helmet>
 
                 <GlobalStyle />
