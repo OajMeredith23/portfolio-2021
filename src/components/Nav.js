@@ -30,7 +30,7 @@ const Container = styled.div`
         justify-content: space-between;
         h2 {
         }
-        color: ${({ theme }) => theme.brandColor};
+        color: ${({ theme }) => theme.textColor};
     }
     `
 

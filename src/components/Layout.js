@@ -74,14 +74,14 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
     dark: {
 
-        brandColor: `#5a8bb0`,
+        brandColor: `#e32b59`,
         brandText: `#fafaf7`,
         background: `#404040`,
         middleground: `#595959`,
         textColor: `#fafaf7`
     },
     light: {
-        brandColor: `#5a8bb0`,
+        brandColor: `#e32b59`,
         brandText: `#fafaf7`,
         background: `#fafaf7`,
         middleground: `whitesmoke`,
