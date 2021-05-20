@@ -16,7 +16,7 @@ const Container = styled.div`
     }
 `
 
-const Nav = ({ children }) => {
+const Footer = ({ children }) => {
 
     return (
         <Container>
@@ -31,4 +31,4 @@ const Nav = ({ children }) => {
     )
 }
 
-export default Nav
+export default Footer

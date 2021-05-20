@@ -3,7 +3,8 @@ module.exports = {
     THE_FLAG: false
   },
   siteMetadata: {
-    title: "Oliver Meredith",
+    title: "Oliver Meredith | Front-end Developer, user-experience designer",
+    description: "Front-end Developer"
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
