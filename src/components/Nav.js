@@ -49,15 +49,25 @@ export const NavLinks = () => {
     const location = useLocation(); // NEW
     return (
         <UL>
-            {links.map(link => {
+            <Link to="/">
+                <LinkItem>
+                    Work
+                </LinkItem>
+            </Link>
+            <Link to="/about">
+                <LinkItem>
+                    About
+                </LinkItem>
+            </Link>
+            <a href="#contact">
+                <LinkItem>
+                    Contact
+                </LinkItem>
+            </a>
+            {/* {links.map(link => {
                 return (
-                    <Link to={link.path} key={link.path}>
-                        <LinkItem isCurrent={location.pathname === link.path}>
-                            {link.title}
-                        </LinkItem>
-                    </Link>
                 )
-            })}
+            })} */}
         </UL>
     )
 }

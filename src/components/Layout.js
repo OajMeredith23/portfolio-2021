@@ -5,6 +5,30 @@ import favicon from '../images/icon.png'
 import Nav from './Nav';
 import Contact from './Contact'
 import Footer from './Footer'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const duration = 0.3
+
+const variants = {
+    initial: {
+        opacity: 0,
+        x: 50
+    },
+    enter: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: duration,
+            delay: duration,
+            when: 'beforeChildren',
+        },
+    },
+    exit: {
+        opacity: 0,
+        x: -50,
+        transition: { duration: duration },
+    },
+}
 
 const GlobalStyle = createGlobalStyle`
     body, html {
@@ -98,14 +122,14 @@ const Container = styled.main`
 
 const title = "Oliver Meredith | Front-end developer & user-experience designer"
 const description = "A front-end developer that builds upon a foundation in design. Creator of interesting, exciting digital experiences that build upon an education in UI/UX Design and 5 years experience using a variety of different web technologies."
-const Layout = ({ children }) => {
+
+const Layout = ({ children, location }) => {
 
     const [darkMode, setDarkMode] = useState(false);
     const prefersDarkMode = typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
 
     useEffect(() => {
         setDarkMode(prefersDarkMode)
-        console.log("Layout")
     }, []);
 
     return (
@@ -113,6 +137,7 @@ const Layout = ({ children }) => {
             <ThemeProvider
                 theme={darkMode ? theme.dark : theme.light}
             >
+
                 <Helmet title={title} defer={false}>
                     <meta name="description" content={description} />
                     <meta property="og:title" content={title} />
@@ -122,13 +147,28 @@ const Layout = ({ children }) => {
                 </Helmet>
 
                 <GlobalStyle />
+
                 <Container>
 
                     <Nav setDarkMode={setDarkMode} darkMode={darkMode} />
-                    {children}
+                    <AnimatePresence>
+                        <motion.main
+                            key={location?.pathname}
+                            variants={variants}
+                            initial="initial"
+                            animate="enter"
+                            exit="exit"
+                        >
+                            {children}
+                        </motion.main>
+                    </AnimatePresence>
+
                     <Contact />
+
                     <Footer />
+
                 </Container>
+
             </ThemeProvider>
         </div>
     )
