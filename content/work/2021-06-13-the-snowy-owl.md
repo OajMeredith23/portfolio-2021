@@ -11,7 +11,7 @@ description: >-
   with a digital interface. Built using <b>Gatsby.js<b/>.
    
   Designed for education via inspiration; the goal being for any user to leave having had their perspective shifted, their worldview expanded.
-thumbnail: snowy-owl-homepage.jpeg
+thumbnail: snowy-owl-map.jpg
 color: "#f3c604"
 ---
 ![“One can make a strong case that snowy owls are among the handful of species, along with walruses, polar bears, and ivory gulls, at most immediate and direct risk from climate change.”  — Scott Weidensaul, A World On The Wing](the-snowy-owl-slides.001.jpg)
