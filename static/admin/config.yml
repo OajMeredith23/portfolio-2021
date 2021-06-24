@@ -20,14 +20,14 @@ collections:
     editor:
       preview: false
     fields:
-      - label: "Gallery"
+      - label: "Images"
         name: "galleryImages"
         widget: "list"
         required: false
         fields:
           - { label: "Image", name: "src", widget: "image" }
-          - { label: "Title", name: "alt", widget: "string", required: false }
-          - { label: "Description", name: "alt", widget: "string", required: false }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "string", required: false }
       - label: "Order"
         name: "order"
         widget: "number"
