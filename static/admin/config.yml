@@ -25,8 +25,9 @@ collections:
         widget: "list"
         required: false
         fields:
-          - { label: "Source", name: "src", widget: "string" }
-          - { label: "Alt Text", name: "alt", widget: "string" }
+          - { label: "Image", name: "src", widget: "image" }
+          - { label: "Title", name: "alt", widget: "string", required: false }
+          - { label: "Description", name: "alt", widget: "string", required: false }
       - label: "Order"
         name: "order"
         widget: "number"
