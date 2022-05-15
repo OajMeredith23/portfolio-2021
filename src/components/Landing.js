@@ -5,14 +5,18 @@ import { LinkIcons } from '../components/Elements/UiElements'
 
 const Container = styled.div`
     position: relative;
-    height: calc(50vh - 2em);
+    min-height: calc(50vh - 2em);
     margin: 1em 0; 
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background: ${({ theme, color }) => color ? color : theme.brandColor}; 
     color: ${({ theme }) => theme.brandText};
+    h1 {
+        text-align: center;
+    }
 `
 const Landing = ({ title, description, children, color = false, links = false }) => {
 
